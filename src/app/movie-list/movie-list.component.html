@@ -5,9 +5,10 @@
 />
 <button (click)="searchMovies(searchQuery)" type="button">Find Movies</button>
 
+<p *ngIf="searching">Fetching data...</p>
 <div *ngFor="let movie of movies" class="image-container">
+  <img src="{{ movie.Poster }}" />
   <p>Title: {{ movie.Title }}</p>
   <P>Year: {{ movie.Year }}</P>
   <p>Type: {{ movie.Type }}</p>
-  <p>Poster: {{ movie.Poster }}</p>
 </div>

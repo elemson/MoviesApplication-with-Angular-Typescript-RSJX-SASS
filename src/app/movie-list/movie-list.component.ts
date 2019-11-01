@@ -9,6 +9,7 @@ import { MovieService } from "../shared/movie.service";
 export class MovieListComponent implements OnInit {
   movies: any[];
   moviesFound: boolean = false;
+  searching: boolean = false;
 
   handleSuccess(data) {
     this.moviesFound = true;
@@ -22,12 +23,13 @@ export class MovieListComponent implements OnInit {
   constructor(private _movieService: MovieService) {}
 
   searchMovies(query: string) {
+    this.searching = true;
     return this._movieService
       .getMovie(query)
       .subscribe(
         data => this.handleSuccess(data),
         error => this.handleError(error),
-        () => console.log("Request complete!")
+        () => (this.searching = false)
       );
   }
 
