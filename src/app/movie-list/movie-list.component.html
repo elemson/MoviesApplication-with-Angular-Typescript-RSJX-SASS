@@ -1,0 +1,13 @@
+<input
+  class="search"
+  [(ngModel)]="searchQuery"
+  placeholder="Search for movies"
+/>
+<button (click)="searchMovies(searchQuery)" type="button">Find Movies</button>
+
+<div *ngFor="let movie of movies" class="image-container">
+  <p>Title: {{ movie.Title }}</p>
+  <P>Year: {{ movie.Year }}</P>
+  <p>Type: {{ movie.Type }}</p>
+  <p>Poster: {{ movie.Poster }}</p>
+</div>
