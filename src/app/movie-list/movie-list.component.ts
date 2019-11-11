@@ -4,12 +4,13 @@ import { MovieService } from "../shared/movie.service";
 @Component({
   selector: "app-movie-list",
   templateUrl: "./movie-list.component.html",
-  styleUrls: ["./movie-list.component.css"]
+  styleUrls: ["./movie-list.component.scss"]
 })
 export class MovieListComponent implements OnInit {
   movies: any[];
   moviesFound: boolean = false;
   searching: boolean = false;
+  lastsearch: string = "";
 
   handleSuccess(data) {
     this.moviesFound = true;
@@ -24,6 +25,7 @@ export class MovieListComponent implements OnInit {
 
   searchMovies(query: string) {
     this.searching = true;
+    this.lastsearch = query;
     return this._movieService
       .getMovie(query)
       .subscribe(

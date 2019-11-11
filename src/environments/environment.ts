@@ -6,5 +6,5 @@
 export const environment = {
   production: false,
   OMDB_API_KEY: "f79aeba3",
-  OMDB_API_URL:" http://www.omdbapi.com/?apikey="
+  OMDB_API_URL: " http://www.omdbapi.com/?apikey="
 };

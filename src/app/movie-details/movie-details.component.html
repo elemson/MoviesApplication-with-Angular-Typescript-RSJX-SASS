@@ -1,3 +1,40 @@
-<p>
-  movie-details works!
-</p>
+<div *ngIf="movie">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="{{ movie.Poster }}" class="thumbnail" />
+      </div>
+
+      <div class="col-md-8">
+        <h2>{{ movie.Title }}</h2>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <strong>Title: {{ movie.Title }}</strong>
+          </li>
+          <li class="list-group-item">
+            <strong>Year : {{ movie.Year }}</strong>
+          </li>
+          <li class="list-group-item">
+            <strong>Type: {{ movie.Type }} </strong>
+          </li>
+
+          <li class="list-group-item">
+            <strong>Runtime: {{ movie.Runtime }}</strong>
+          </li>
+          <li class="list-group-item">
+            <strong>Genre: {{ movie.Genre }}</strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="Well">
+      <h3>Plot</h3>
+      {{ movie.Plot }}
+      <hr />
+      <a routerLink="/" class="btn btn-primary"> Go back</a>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

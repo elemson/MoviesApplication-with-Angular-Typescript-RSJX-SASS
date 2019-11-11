@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import { NavbarComponent } from "./navbar/navbar.component";
+import { MovieService } from "./shared/movie.service";
 
 @Component({
   selector: "app-root",
